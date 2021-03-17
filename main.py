@@ -10,21 +10,34 @@ while n != "reboot" or "reset":
         break
     print('Please try again')
 if x == 1:
-    #forever if connection is detected to be poor
-    #detect if connection is poor
-    print('Your computer will restart now, please answer yes or no to continue.')
-    n = 0
-    while n != "yes" or "no":
-        n = input()
-        if n == "no":
-            print('Your computer will not restart.')
-            exit()
-        elif n == "yes":
-            print('Your computer will now restart.')
-            from subprocess import call
-            rc = call("./reboot.sh")
-        print('Please try again')
+    while x == 1:
+        #if wifi is poor:
+            print('Your computer will restart now, please answer yes or no to continue.')
+            n = 0
+            while n != "yes" or "no":
+                n = input()
+                if n == "no":
+                    print('Your computer will not restart.')
+                    exit()
+                elif n == "yes":
+                    print('Your computer will now restart.')
+                    from subprocess import call
+                    rc = call("./reboot.sh")
+                print('Please try again')
 elif x == 2:
     #forever if connection is detected to be poor
     #detect if connection is poor
     print()
+
+#check every 10 minutes
+from urllib.request import urlopen
+def availablity():
+    try:
+        urlopen('http://216.58.192.142', timeout=1)
+        return True
+    except:
+        return False
+if availablity() == False:
+    print()
+while availablity() == True
+    print('this works')
