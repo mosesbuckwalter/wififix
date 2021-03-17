@@ -9,8 +9,8 @@ while n != "reboot" or "reset":
     elif n == "reset":
         x = 2
         break
-if x = 1:
-    //detect if connection is poor
+if x == 1:
+    #detect if connection is poor
     print('Your computer will restart now, please answer yes or no to continue.')
     n = 0
     while n != "yes" or "no":
@@ -23,6 +23,6 @@ if x = 1:
             print('Your computer will now restart.')
             from subprocess import call
             rc = call("./reboot.sh")
-elif x = 2:
-    //detect if connection is poor
+elif x == 2:
+    #detect if connection is poor
     print()
