@@ -10,6 +10,7 @@ while n != "reboot" or "reset":
         x = 2
         break
 if x == 1:
+    #forever if connection is detected to be poor
     #detect if connection is poor
     print('Your computer will restart now, please answer yes or no to continue.')
     n = 0
@@ -24,5 +25,6 @@ if x == 1:
             from subprocess import call
             rc = call("./reboot.sh")
 elif x == 2:
+    #forever if connection is detected to be poor
     #detect if connection is poor
     print()
