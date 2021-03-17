@@ -29,6 +29,7 @@ elif x == 2:
     #detect if connection is poor
     print()
 
+#unfinished, just testing things.
 #check every 10 minutes
 from urllib.request import urlopen
 def availablity():
