@@ -2,13 +2,13 @@ print('How would you like to handle poor connection? Say "reboot" if you would l
 n = 0
 while n != "reboot" or "reset":
     n = input()
-    print('Please try again')
     if n == "reboot":
         x = 1
         break
     elif n == "reset":
         x = 2
         break
+    print('Please try again')
 if x == 1:
     #forever if connection is detected to be poor
     #detect if connection is poor
@@ -16,7 +16,6 @@ if x == 1:
     n = 0
     while n != "yes" or "no":
         n = input()
-        print('Please try again')
         if n == "no":
             print('Your computer will not restart.')
             exit()
@@ -24,6 +23,7 @@ if x == 1:
             print('Your computer will now restart.')
             from subprocess import call
             rc = call("./reboot.sh")
+        print('Please try again')
 elif x == 2:
     #forever if connection is detected to be poor
     #detect if connection is poor
