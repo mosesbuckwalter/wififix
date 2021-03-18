@@ -47,5 +47,9 @@ elif x == 2:
         if availablity() == False:
             print('Your computer will now turn the WiFi off and on again.')
             import os
-            cmd = '' #turn off WiFi
+            cmd = 'nmcli radio wifi off' #turn off WiFi
             os.system(cmd)
+            sleep(10.0)
+            cmd = 'nmcli radio wifi on'
+            os.system(cmd)
+            sleep(20.0)
