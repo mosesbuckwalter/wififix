@@ -30,16 +30,16 @@ def reboot():
         print('Please try again')
 import time
 import os
-print('This program will turn off and on your WiFi when it detects poor signal. Are you okay with this? Answer "yes" or "no".')
 n = 0
+
+print('This program will turn off and on your WiFi when it detects poor signal. Are you okay with this? Answer "yes" or "no".')
 while n != "no" or "yes":
     n = input()
     if n == "yes":
-        x = 1
         break
     elif n == "no":
         exit()
     print('Please try again')
-while x == 1:
+while n == "yes":
     if availablity() == False:
         wifi()
