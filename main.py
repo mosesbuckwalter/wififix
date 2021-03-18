@@ -7,7 +7,8 @@ def availablity():
     except:
         return False
 print('How would you like to handle poor connection? Say "reboot" if you would like to restart your computer if internet connection is bad. Say "reset" if you would like the WiFi connection to be turned off and on when the connection is poor.')
-n = 0
+   def fixwifi():        
+  n = 0
 while n != "reboot" or "reset":
     n = input()
     if n == "reboot":
