@@ -49,7 +49,7 @@ elif x == 2:
             import os
             cmd = 'nmcli radio wifi off' #turn off WiFi
             os.system(cmd)
-            sleep(10.0)
+            time.sleep(10.0)
             cmd = 'nmcli radio wifi on'
             os.system(cmd)
-            sleep(20.0)
+            time.sleep(20.0)
