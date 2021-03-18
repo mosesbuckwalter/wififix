@@ -30,9 +30,9 @@ if x == 1:
                     exit()
                 elif n == "yes":
                     print('Your computer will now restart.')
-                    #need to have this directly in python instead of being a bash script
-                    from subprocess import call
-                    rc = call("./reboot.sh")
+                    import os
+                    cmd = 'sudo reboot'
+                    os.system(cmd)
                 print('Please try again')
 elif x == 2:
     while x == 2:
@@ -46,4 +46,6 @@ elif x == 2:
                 return False
         if availablity() == False:
             print('Your computer will now turn the WiFi off and on again.')
-            #turn off WiFi
+            import os
+            cmd = '' #turn off WiFi
+            os.system(cmd)
