@@ -53,3 +53,4 @@ elif x == 2:
             cmd = 'nmcli radio wifi on'
             os.system(cmd)
             time.sleep(20.0)
+            print('WiFi successfully turned off and on')
