@@ -30,22 +30,16 @@ def reboot():
         print('Please try again')
 import time
 import os
-print('How would you like to handle poor connection? Say "reboot" if you would like to restart your computer if internet connection is bad. Say "reset" if you would like the WiFi connection to be turned off and on when the connection is poor.')
+print('This program will turn off and on your WiFi when it detects poor signal. Are you okay with this? Answer "yes" or "no".')
 n = 0
-while n != "reboot" or "reset":
+while n != "no" or "yes":
     n = input()
-    if n == "reboot":
+    if n == "yes":
         x = 1
         break
-    elif n == "reset":
-        x = 2
-        break
+    elif n == "no":
+        exit
     print('Please try again')
-if x == 1:
-    while x == 1:
-        if availablity() == False:
-            reboot()
-elif x == 2:
-    while x == 2:
-        if availablity() == False:
-            wifi()
+while x == 1:
+    if availablity() == False:
+        wifi()
