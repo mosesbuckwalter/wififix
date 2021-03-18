@@ -38,7 +38,7 @@ while n != "no" or "yes":
         x = 1
         break
     elif n == "no":
-        exit
+        exit()
     print('Please try again')
 while x == 1:
     if availablity() == False:
