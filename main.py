@@ -28,18 +28,22 @@ def reboot():
             cmd = 'sudo reboot'
             os.system(cmd)
         print('Please try again')
+def confirm():
+    global n
+    n = 0
+    while n != "no" or "yes":
+        n = input()
+        if n == "yes":
+            break
+        elif n == "no":
+            exit()
+        print('Please try again')
 import time
 import os
-n = 0
+
 
 print('This program will turn off and on your WiFi when it detects poor signal. Are you okay with this? Answer "yes" or "no".')
-while n != "no" or "yes":
-    n = input()
-    if n == "yes":
-        break
-    elif n == "no":
-        exit()
-    print('Please try again')
+confirm()
 while n == "yes":
     if availablity() == False:
         wifi()
