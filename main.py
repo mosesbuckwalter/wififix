@@ -1,3 +1,5 @@
+import time #used for the sleep function.
+import os #used to run os commands
 from urllib.request import urlopen
 def availablity(): #this function trys to connect to Google, and if it does successfully, then it returns true, otherwise it will return false.
     try:
@@ -38,9 +40,6 @@ def confirm(): #this function takes user input and requires a yes or no response
         elif n == "no":
             exit()
         print('Please try again')
-import time #used for the sleep function.
-import os #used to run os commands
-
 
 print('This program will turn off and on your WiFi when it detects poor signal. Are you okay with this? Answer "yes" or "no".') #stating what the program will do when ran.
 confirm() #confirms that the user would like to do this.
