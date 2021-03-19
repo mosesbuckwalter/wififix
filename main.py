@@ -1,6 +1,8 @@
 import time #used for the sleep function.
 import os #used to run os commands
+from datetime import datetime
 from urllib.request import urlopen
+
 def availablity(): #this function trys to connect to Google, and if it does successfully, then it returns true, otherwise it will return false.
     try:
         urlopen('http://216.58.192.142', timeout=1)
@@ -8,6 +10,7 @@ def availablity(): #this function trys to connect to Google, and if it does succ
         time.sleep(5.0)
     except:
         return False
+
 def wifi(): #this function turns off and on the wifi again and prints status messages.
     print('Your computer will now turn the WiFi off and on again.')
     cmd = 'nmcli radio wifi off' #turn off WiFi
@@ -17,6 +20,7 @@ def wifi(): #this function turns off and on the wifi again and prints status mes
     os.system(cmd)
     time.sleep(20.0)
     print('WiFi successfully turned off and on') #indication of it working
+
 def reboot(): #this program restarts your computer when WiFi is detected to be not connected, and takes a yes or no input from the user.
     print('Your computer will restart now, please answer yes or no to continue.')
     n = 0
@@ -30,6 +34,7 @@ def reboot(): #this program restarts your computer when WiFi is detected to be n
             cmd = 'sudo reboot'
             os.system(cmd)
         print('Please try again')
+
 def confirm(): #this function takes user input and requires a yes or no response and will loop until it receives such.
     global n
     n = 0
@@ -41,8 +46,17 @@ def confirm(): #this function takes user input and requires a yes or no response
             exit()
         print('Please try again')
 
+log = []
+now = str(datetime.now())
+connected = ('The WiFi was connected on, ' + now)
+disconnected = ('The WiFi was not connected on, ' + now)
+
+print(now)
 print('This program will turn off and on your WiFi when it detects poor signal. Are you okay with this? Answer "yes" or "no".') #stating what the program will do when ran.
 confirm() #confirms that the user would like to do this.
 while n == "yes":
-    if availablity() == False: #checks if WiFi connected is false
+    if availablity() == False: #checks if WiFi connected is false.
+        log.append(disconnected) #adds not connected time to log.
         wifi() #if the WiFi connected is false, it will restart the WiFi.
+        log.append(connected) #adds connected time to log.
+        print(log) #prints the log.
