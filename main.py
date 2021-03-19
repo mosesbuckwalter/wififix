@@ -9,10 +9,11 @@ def availablity(): #this function trys to connect to Google, and if it does succ
         time.sleep(5.0)
     except:
         return False
-        now = datetime.now()
-
-        current_time = now.strftime("%H:%M:%S")
-        print("Current Time =", current_time)
+def time():
+    now = datetime.now()
+    current_time = now.strftime("%H:%M:%S")
+    print("Current Time =", current_time)
+time()
 def wifi(): #this function turns off and on the wifi again and prints status messages.
     print('Your computer will now turn the WiFi off and on again.')
     cmd = 'nmcli radio wifi off' #turn off WiFi
