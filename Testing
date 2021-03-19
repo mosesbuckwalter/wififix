@@ -1,0 +1,11 @@
+score=[1,2,3,4,5]
+
+with open("file.txt", 'w') as f:
+    for s in score:
+        f.write(str(s) + '\n')
+
+with open("file.txt", 'r') as f:
+    score = [line.rstrip('\n') for line in f]
+
+
+print(score)
