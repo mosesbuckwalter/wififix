@@ -1,5 +1,6 @@
 import time #used for the sleep function.
 import os #used to run os commands
+from datetime import datetime
 from urllib.request import urlopen
 def availablity(): #this function trys to connect to Google, and if it does successfully, then it returns true, otherwise it will return false.
     try:
