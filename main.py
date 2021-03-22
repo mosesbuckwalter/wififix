@@ -7,7 +7,7 @@ def availablity(): #this function trys to connect to Google, and if it does succ
     try:
         urlopen('http://216.58.192.142', timeout=1)
         return True
-        time.sleep(5.0)
+        time.sleep(4.0)
     except:
         return False
 
@@ -15,10 +15,10 @@ def wifi(): #this function turns off and on the wifi again and prints status mes
     print('Your computer will now turn the WiFi off and on again.')
     cmd = 'nmcli radio wifi off' #turn off WiFi
     os.system(cmd)
-    time.sleep(5.0)
+    time.sleep(2.0)
     cmd = 'nmcli radio wifi on' #turn on WiFi
     os.system(cmd)
-    time.sleep(20.0)
+    time.sleep(10.0)
     print('WiFi successfully turned off and on') #indication of it working
 
 def reboot(): #this program restarts your computer when WiFi is detected to be not connected, and takes a yes or no input from the user.
