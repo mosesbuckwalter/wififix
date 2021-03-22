@@ -11,8 +11,8 @@ The project has just been able to function, and it has just finished its testing
 ## License
 This software is licensed under the Open-Source BSD-2 license. Look in the "LICENSE" file for more info.
 
-## Compiling
-Just compile the software by putting "python3.8 main.py" in the terminal.
+## Running
+Just run the software by putting "python3.8 main.py" in the terminal.
 
 ## Contributions
 No need to contribute to this.
