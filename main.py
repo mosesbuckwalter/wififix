@@ -2,6 +2,7 @@ import time #used for the sleep function.
 import os #used to run os commands
 from datetime import datetime
 from urllib.request import urlopen
+global n
 
 def availablity(): #this function trys to connect to Google, and if it does successfully, then it returns true, otherwise it will return false.
     try:
@@ -47,6 +48,7 @@ def confirm(): #this function takes user input and requires a yes or no response
         print('Please try again')
 
 def guiconfirm(): #checks for 0 or 2 and runs the program if it's a 2 or exits if it's a 0.
+    global n
     if gui == 0:
         exit()
     elif gui == 2:
@@ -65,8 +67,12 @@ disconnected = ('The WiFi was not connected on, ' + now) #displays a disconnecte
 GUI() #starts the GUI
 guiconfirm() #makes sure the user is okay with the program continuing.
 
-print('This program will turn off and on your WiFi when it detects poor signal. Are you okay with this? Answer "yes" or "no".') #stating what the program will do when ran.
-confirm() #confirms that the user would like to do this.
+#commented out CLI
+
+#print('This program will turn off and on your WiFi when it detects poor signal. Are you okay with this? Answer "yes" or "no".') #stating what the program will do when ran.
+#confirm() #confirms that the user would like to do this.
+
+#end commented out CLI
 
 while n == "yes":
     if availablity() == False: #checks if WiFi connected is false.
