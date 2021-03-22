@@ -9,4 +9,4 @@ It will repeatedly check the wifi, and it will reset the wifi every time it dete
 The project is still in the working alpha stage. This means the software may still have issues, and these issues will be fixed in future updates.
 
 ## License
-This software is licensed under the Open-Source BSD-2 license
+This software is licensed under the Open-Source BSD-2 license. Look in the "LICENSE" file for more info.
