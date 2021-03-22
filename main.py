@@ -59,4 +59,3 @@ while n == "yes":
         wifi() #if the WiFi connected is false, it will restart the WiFi.
         log.append(connected) #adds connected time to log.
         print(log) #prints the log.
-        availablity() #checks availablity again
