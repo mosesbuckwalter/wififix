@@ -11,7 +11,7 @@ def availablity(): #this function trys to connect to Google, and if it does succ
     except:
         return False
 
-def wifi(): #this function turns off and on the wifi again and prints status messages.
+def wifi(): #this function turns off and on the wifi again and prints status messages. indication of it working
     print('Your computer will now turn the WiFi off and on again.')
     cmd = 'nmcli radio wifi off' #turn off WiFi
     os.system(cmd)
@@ -19,7 +19,7 @@ def wifi(): #this function turns off and on the wifi again and prints status mes
     cmd = 'nmcli radio wifi on' #turn on WiFi
     os.system(cmd)
     time.sleep(10.0)
-    print('WiFi successfully turned off and on') #indication of it working
+    print('WiFi successfully turned off and on')
 
 def reboot(): #this program restarts your computer when WiFi is detected to be not connected, and takes a yes or no input from the user.
     print('Your computer will restart now, please answer yes or no to continue.')
@@ -46,7 +46,7 @@ def confirm(): #this function takes user input and requires a yes or no response
             exit()
         print('Please try again')
 
-def guiconfirm():
+def guiconfirm(): #checks for 0 or 2 and runs the program if it's a 2 or exits if it's a 0.
     if gui == 0:
         exit()
     elif gui == 2:
@@ -57,13 +57,13 @@ def GUI(): #this function starts an xmessage gui with 2 buttons
     cmd = 'xmessage "This program will turn off and on your WiFi when it detects poor signal. Are you okay with this?" -buttons Yes:2,No:0'
     gui = os.system(cmd) >> 8
 
-log = []
-now = str(datetime.now())
-connected = ('The WiFi was connected on, ' + now)
-disconnected = ('The WiFi was not connected on, ' + now)
+log = [] #creates empty list for the log
+now = str(datetime.now()) #gets current date and time and sets it as a string
+connected = ('The WiFi was connected on, ' + now) #displays a connected message along with the current time and date
+disconnected = ('The WiFi was not connected on, ' + now) #displays a disconnected message along with the current time and date
 
-GUI()
-guiconfirm()
+GUI() #starts the GUI
+guiconfirm() #makes sure the user is okay with the program continuing.
 
 print('This program will turn off and on your WiFi when it detects poor signal. Are you okay with this? Answer "yes" or "no".') #stating what the program will do when ran.
 confirm() #confirms that the user would like to do this.
@@ -74,6 +74,6 @@ while n == "yes":
         wifi() #if the WiFi connected is false, it will restart the WiFi.
         log.append(connected) #adds connected time to log.
         print(log) #prints the log.
-        availablity()
+        availablity() #checks if WiFi connected is false.
     else:
-        availablity()
+        availablity() #checks if WiFi connected is false.
