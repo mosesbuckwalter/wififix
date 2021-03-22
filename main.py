@@ -46,13 +46,28 @@ def confirm(): #this function takes user input and requires a yes or no response
             exit()
         print('Please try again')
 
+def guiconfirm():
+    if gui == 0:
+        exit()
+    elif gui == 2:
+        n = 'yes'
+
+def GUI(): #this function starts an xmessage gui with 2 buttons
+    global gui
+    cmd = 'xmessage "This program will turn off and on your WiFi when it detects poor signal. Are you okay with this?" -buttons Yes:2,No:0'
+    gui = os.system(cmd) >> 8
+
 log = []
 now = str(datetime.now())
 connected = ('The WiFi was connected on, ' + now)
 disconnected = ('The WiFi was not connected on, ' + now)
 
+GUI()
+guiconfirm()
+
 print('This program will turn off and on your WiFi when it detects poor signal. Are you okay with this? Answer "yes" or "no".') #stating what the program will do when ran.
 confirm() #confirms that the user would like to do this.
+
 while n == "yes":
     if availablity() == False: #checks if WiFi connected is false.
         log.append(disconnected) #adds not connected time to log.
