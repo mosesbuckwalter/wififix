@@ -55,8 +55,9 @@ print(now)
 print('This program will turn off and on your WiFi when it detects poor signal. Are you okay with this? Answer "yes" or "no".') #stating what the program will do when ran.
 confirm() #confirms that the user would like to do this.
 while n == "yes":
-    if availablity() == False: #checks if WiFi connected is false.
+    while availablity() == False: #checks if WiFi connected is false.
         log.append(disconnected) #adds not connected time to log.
         wifi() #if the WiFi connected is false, it will restart the WiFi.
         log.append(connected) #adds connected time to log.
         print(log) #prints the log.
+        availablity() #checks availablity again
