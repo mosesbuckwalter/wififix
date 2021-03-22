@@ -51,7 +51,6 @@ now = str(datetime.now())
 connected = ('The WiFi was connected on, ' + now)
 disconnected = ('The WiFi was not connected on, ' + now)
 
-print(now)
 print('This program will turn off and on your WiFi when it detects poor signal. Are you okay with this? Answer "yes" or "no".') #stating what the program will do when ran.
 confirm() #confirms that the user would like to do this.
 while n == "yes":
