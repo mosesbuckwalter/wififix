@@ -67,13 +67,6 @@ disconnected = ('The WiFi was not connected on, ' + now) #displays a disconnecte
 GUI() #starts the GUI
 guiconfirm() #makes sure the user is okay with the program continuing.
 
-#commented out CLI
-
-#print('This program will turn off and on your WiFi when it detects poor signal. Are you okay with this? Answer "yes" or "no".') #stating what the program will do when ran.
-#confirm() #confirms that the user would like to do this.
-
-#end commented out CLI
-
 while n == "yes":
     if availablity() == False: #checks if WiFi connected is false.
         log.append(disconnected) #adds not connected time to log.
