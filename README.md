@@ -4,6 +4,7 @@ A solution to fix the Wifi in Penn Manor High School.
 ## Descrition
 This allows the computer to fix wifi issues every time the wifi stops working.
 It will repeatedly check the wifi, and it will reset the wifi every time it detects a weak wifi signal.
+Updated Read #3
 
 ## Initial Stage
 The project has just been able to function, and it has just finished its testing stage. The software may still have issues, but these issues may not be fixed.
